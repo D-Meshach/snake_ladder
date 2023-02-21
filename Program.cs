@@ -15,7 +15,7 @@ namespace snake_ladder_upload
         static void Main(string[] args)
         {
             Console.Write("Welcome to snake and Ladder program\n");
-            int counts = 0, dice_played = 0, i = 0;
+            int counts = 0, dice_played = 0;
             Random random = new Random();
             while (counts <= 100)
             {
@@ -33,6 +33,7 @@ namespace snake_ladder_upload
 
                         }
                         Console.WriteLine("No play-remains same");
+                        //display position of dice
                         Console.WriteLine("position=" + counts);
                         break;
                     case IS_LADDER:
@@ -47,6 +48,7 @@ namespace snake_ladder_upload
                         }
 
                         Console.WriteLine("Dice points:" + dice);
+                        //display position of dice
                         Console.WriteLine("position=" + counts);
                         break;
                     case IS_SNAKE:
@@ -59,12 +61,15 @@ namespace snake_ladder_upload
                         }
 
                         Console.WriteLine("Snake bit me :( go " + dice + " point back");
+                        //display position of dice
                         Console.WriteLine("position=" + counts);
                         break;
                 }
                 
                
             }
+            //Number of times the dice was played
+            Console.WriteLine("Total times dice played to win: " + dice_played);
 
 
         }
