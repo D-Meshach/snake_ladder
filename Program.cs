@@ -11,8 +11,14 @@ namespace snake_ladder_upload
        
         static void Main(string[] args)
         {
-            Console.Write("Welcome to snake and Ladder program");
-            
+            Console.Write("Welcome to snake and Ladder program\n");
+            int counts = 0, dice_played = 0, i = 0;
+            while (counts <= 100)
+            {
+                Console.Write("\n Player Position :" + counts);
+                counts++;
+            }
+
 
         }
     }
