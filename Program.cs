@@ -42,7 +42,12 @@ namespace snake_ladder_upload
                     case IS_SNAKE:
                         counts -= dice;
                         //here reset occurs
-                       
+                        if (counts < 0)
+                        {
+                            Console.WriteLine("---Game Restarts---");
+                            counts = 0;
+                        }
+
                         Console.WriteLine("Snake bit me :( go " + dice + " point back");
                         Console.WriteLine("position=" + counts);
                         break;
