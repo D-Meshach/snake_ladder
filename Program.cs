@@ -8,7 +8,10 @@ namespace snake_ladder_upload
 {
     internal class Program
     {
-       
+        public const int USER_STATE = 0;
+        public const int IS_NO_PLAY = 0;
+        public const int IS_LADDER = 1;
+        public const int IS_SNAKE = 2;
         static void Main(string[] args)
         {
             Console.Write("Welcome to snake and Ladder program\n");
@@ -17,9 +20,47 @@ namespace snake_ladder_upload
             while (counts <= 100)
             {
                 int dice = random.Next(1, 7);
-                counts += dice;
-                Console.Write("\n Player Position :" + counts);
-                counts++;
+                if (counts == 100) { break; }
+                int options = random.Next(0, 3);
+                switch (options)
+                {
+                    case IS_NO_PLAY:
+                        counts += 0;
+                        if (counts > 100)
+                        {
+                            counts -= dice;
+
+                        }
+                        Console.WriteLine("No play-remains same");
+                        Console.WriteLine("position=" + counts);
+                        break;
+                    case IS_LADDER:
+                        counts += dice;
+                        dice_played += 1;
+
+                        if (counts > 100)
+                        {
+                            counts -= dice;
+                            dice_played -= 1;
+
+
+                        }
+                        Console.WriteLine("Dice points:" + dice);
+                        Console.WriteLine("position=" + counts);
+                        break;
+                    case IS_SNAKE:
+                        counts -= dice;
+                        //here reset occurs
+                        if (counts < 0)
+                        {
+                            counts = 0;
+                        }
+                        Console.WriteLine("Snake bit me :( go " + dice + " point back");
+                        Console.WriteLine("position=" + counts);
+                        break;
+                }
+                
+               
             }
 
 
