@@ -70,6 +70,8 @@ namespace snake_ladder_upload
             }
             //Number of times the dice was played
             Console.WriteLine("Total times dice played to win: " + dice_played);
+            snake_2player cs = new snake_2player();
+            cs.game_start();
 
 
         }
