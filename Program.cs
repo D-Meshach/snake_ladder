@@ -27,15 +27,25 @@ namespace snake_ladder_upload
                 {
                     case IS_NO_PLAY:
                         counts += 0;
-                        
+                        if (counts > 100)
+                        {
+                            counts -= dice;
+
+                        }
                         Console.WriteLine("No play-remains same");
                         Console.WriteLine("position=" + counts);
                         break;
                     case IS_LADDER:
                         counts += dice;
                         dice_played += 1;
+                        if (counts > 100)
+                        {
+                            counts -= dice;
+                            dice_played -= 1;
 
-                       
+
+                        }
+
                         Console.WriteLine("Dice points:" + dice);
                         Console.WriteLine("position=" + counts);
                         break;
